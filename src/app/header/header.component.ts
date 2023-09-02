@@ -9,7 +9,7 @@ export class HeaderComponent {
   logo: string = 'amazon';
   headerLinks: string[] = ['Home', 'Products',  'About', 'contact us'];
   language: string = 'en-Us';
-  isLogin:boolean=false;
+  isLogin:boolean=true;
   //'ar-SA'
   constructor() {}
 

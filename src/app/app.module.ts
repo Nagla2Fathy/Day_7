@@ -1,26 +1,24 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
+import { AboutComponent } from './about/about.component';
 
+const routes: Routes = [
+  {path:'home',component:HomeComponent},
+  {path:'',component:HomeComponent},
+  {path:'products',component:ProductsComponent},
+
+
+
+  {path:'productdetails/:id',component:ProductsComponent},
+  {path:'about',component:AboutComponent},
+  {path:'contactus',component:con},
+  {path:'**',component:NotFoundComponent},
+];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    ProductsComponent,
-
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
-export class AppModule { }
+export class AppRoutingModule { }
